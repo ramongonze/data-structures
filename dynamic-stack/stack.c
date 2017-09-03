@@ -15,6 +15,19 @@ stack* create_stack(){
 	return new_stack;
 }
 
+void delete_stack(stack *s){
+	cell *q;
+	stack_type i;
+
+	for(i = s->size; i > 0; i--){
+		q = s->top;
+		s->top = s->top->next;
+		free(q);
+	}
+
+	free(s);
+}
+
 void push(stack *s, item_type i){
 	cell *new_cell = NULL;
 	cell *q;
@@ -49,19 +62,6 @@ item_type pop(stack *s){
 	free(q);
 
 	return i;
-}
-
-void delete_stack(stack *s){
-	cell *q;
-	stack_type i;
-
-	for(i = s->size; i > 0; i--){
-		q = s->top;
-		s->top = s->top->next;
-		free(q);
-	}
-
-	free(s);
 }
 
 int is_empty(stack *s){
