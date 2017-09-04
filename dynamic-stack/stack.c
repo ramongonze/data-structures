@@ -4,13 +4,8 @@ stack* create_stack(){
 	stack *new_stack = NULL;
 
 	new_stack = (stack*) malloc(sizeof(stack));
-	if(new_stack == NULL){
-		printf("Error to allocate memory for a stack.\n");
-		return NULL;
-	}
-
 	new_stack->top = NULL;
-	new_stack->size = 0;
+	new_stack->length = 0;
 
 	return new_stack;
 }
@@ -19,7 +14,7 @@ void delete_stack(stack *s){
 	cell *q;
 	stack_type i;
 
-	for(i = s->size; i > 0; i--){
+	for(i = s->length; i > 0; i--){
 		q = s->top;
 		s->top = s->top->next;
 		free(q);
@@ -33,35 +28,27 @@ void push(stack *s, item_type i){
 	cell *q;
 
 	new_cell = (cell*) malloc(sizeof(cell));
-	if(new_cell == NULL){
-		printf("Error to allocate memory for a cell.\n");
-		return;
-	}
-
 	new_cell->item = i;
 	new_cell->next = s->top;
 
 	s->top = new_cell;
-	s->size++;
+	s->length++;
 }
 
-item_type pop(stack *s){
+int pop(stack *s, item_type *i){
 	cell *q;
-	item_type i;
 
 	if(is_empty(s)){
-		printf("Error! Nothing to be removed, the stack is empty!\n");
-		i.key = -1;
-		return i;
+		return -1;
 	}
 
 	q = s->top;
-	i = q->item;
+	*i = q->item;
 	s->top = s->top->next;
-	s->size--;
+	s->length--;
 	free(q);
 
-	return i;
+	return 0;
 }
 
 int is_empty(stack *s){
