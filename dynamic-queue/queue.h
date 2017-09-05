@@ -1,5 +1,5 @@
 /*
-*	This is a dynamic queue, a data structure. It was based in a chain list.
+*	This is a dynamic queue, a data structure. It was based in a linked list.
 *	It has the basic operations: create queue; delete queue; enqueue; dequeue
 *	and check if the queue is empty. To control the queue length, there is the
 *	'length' variable, in the queue struct.
@@ -38,7 +38,7 @@ void delete_queue(queue *q);
 void enqueue(queue *q, item_type i);
 
 //	Remove the first element in the begining of the queue and returns it to 'item'.
-//	It returns 0 if it was succefull or != 0 otherwise (the queue is empty).
+//	It returns 0 if it was successful or != 0 otherwise (the queue is empty).
 int dequeue(queue *q, item_type *item);
 
 // Returns 1 if the queue is empty or 0 otherwise.

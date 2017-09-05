@@ -1,5 +1,5 @@
 /*
-*	This is a stack, a dynamic data structure, based in a chain list.
+*	This is a stack, a dynamic data structure, based in a linked list.
 *	It has the basic operations: create stack; delete stack; insert item (push);
 *	remove item (pop) and check if the stack is empty.
 */
@@ -38,7 +38,7 @@ void delete_stack(stack *s);
 void push(stack *s, item_type i);
 
 //	Remove the item in the top of the stack and returns it into 'i'.
-//	It returns 0 if it was succefull or != 0 otherwise (the stack is empty).
+//	It returns 0 if it was successful or != 0 otherwise (the stack is empty).
 int pop(stack *s, item_type *i);
 
 //	Returns 1 if the stack is empty or != 1 otherwise

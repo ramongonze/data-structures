@@ -33,12 +33,10 @@ stack* create_stack();
 //	Delete the stack. Returns 0 if it was succefull or != 0 otherwise.
 int delete_stack(stack *s);
 
-//	Insert a item in the top of the stack. Returns 0 if it was
-//	succefull or != 0 otherwise.
+//	Insert a item in the top of the stack. Returns 0 if it was successful or != 0 otherwise.
 int push(stack *s, item_type i);
 
-//	Remove and returns the item in the top of the stack. Returns 0 if it was
-//	succefull or != 0 otherwise.
+//	Remove and returns the item in the top of the stack. Returns 0 if it was successful or != 0 otherwise.
 int pop(stack *s, item_type *i);
 
 //	Returns 1 if the stack is empty or 0 otherwise.
