@@ -4,6 +4,9 @@
 *	It has the following operations: create_list; delete_list; search; insert and remove item;
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef int key_type;
 typedef int list_type;
 
